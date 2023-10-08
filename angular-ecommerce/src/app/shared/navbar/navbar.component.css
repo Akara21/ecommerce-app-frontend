@@ -18,7 +18,7 @@
 }
 
 .logo {
-  height: 2.2rem;
+  height: 5.2rem;
 }
 
 /**************************/
@@ -53,7 +53,7 @@
   position: absolute;
   width: 0;
   height: 0.3rem;
-  bottom: -1rem;
+  bottom: -0.8rem;
   left: 0;
   background-color: #087f5b;
   transition: all 0.3s ease;
