@@ -1,0 +1,10 @@
+.app-container {
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-border-bottom {
+  border-bottom: 8px solid #087f5b;
+}

@@ -7,9 +7,19 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    FooterComponent,
+    ProductsComponent,
+    ProductCardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
