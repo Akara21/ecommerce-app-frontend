@@ -1,0 +1,6 @@
+.products-grid-container {
+  width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1000px;
+}

@@ -36,9 +36,23 @@ body {
   margin: 0 auto;
 }
 
-.grid-3-cols {
+.grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2-cols {
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 80px;
+}
+
+.grid-3-cols {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 60px;
+  row-gap: 50px;
+}
+
+.grid-4-cols {
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 60px;
   row-gap: 50px;
 }

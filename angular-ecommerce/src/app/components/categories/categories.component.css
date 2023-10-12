@@ -1,0 +1,30 @@
+.category-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.07);
+  position: fixed;
+  width: 260px;
+  overflow: hidden;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 16px 24px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.category-amount {
+  color: #fff;
+  background-color: #087f5b;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.category-item:hover {
+  background-color: #f7f7f7;
+}

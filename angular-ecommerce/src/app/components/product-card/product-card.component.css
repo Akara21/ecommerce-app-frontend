@@ -50,7 +50,7 @@ img {
 }
 
 .chair-box {
-  padding: 32px;
+  padding: 28px;
 }
 
 h3 {
@@ -60,7 +60,7 @@ h3 {
 
 .chair-details {
   list-style: none;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .chair-details li {
