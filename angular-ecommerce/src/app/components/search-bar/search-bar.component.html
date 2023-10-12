@@ -1,1 +1,18 @@
-<input type="text" />
+<div class="search-container">
+  <mat-icon aria-label="search-icon" class="search-icon">search</mat-icon>
+  <input
+    type="text"
+    class="search-bar"
+    placeholder="Search for a Product"
+    [(ngModel)]="searchTerm"
+    #searchInput
+    (keyup)="test()"
+  />
+  <mat-icon
+    (click)="clearInput()"
+    aria-label="clear-icon"
+    class="clear-icon"
+    [ngClass]="{ 'show-clear-icon': searchTerm }"
+    >clear
+  </mat-icon>
+</div>
