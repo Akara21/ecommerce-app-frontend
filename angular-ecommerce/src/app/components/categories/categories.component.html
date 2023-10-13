@@ -2,12 +2,20 @@
   <app-search-bar></app-search-bar>
   <section class="category-section">
     <div
-      *ngFor="let category of categories"
+      (click)="setActiveCategory({categoryName:'Alle'})"
+      [class.active]="activeCategory === 'Alle'"
       class="category-item"
-      [class.active]="activeCategory === category.categoryname"
-      (click)="setActiveCategory(category.categoryname)"
     >
-      <p class="category-name">{{ category.categoryname }}</p>
+      <p class="category-name">Alle</p>
+      <span class="category-amount">12</span>
+    </div>
+    <div
+      (click)="setActiveCategory(category)"
+      *ngFor="let category of categories"
+      [class.active]="activeCategory === category.categoryName"
+      class="category-item"
+    >
+      <p class="category-name">{{ category.categoryName }}</p>
       <span class="category-amount">12</span>
     </div>
   </section>

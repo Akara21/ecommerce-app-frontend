@@ -1,18 +1,34 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ProductCategory} from "../../shared/models/ProductCategory";
+import {ProductCategoryService} from "../../shared/services/product-category.service";
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css'],
 })
-export class CategoriesComponent {
-  activeCategory: string = '';
-  categories: { categoryname: string }[] = [
-    { categoryname: 'name1' },
-    { categoryname: 'name2' },
-  ];
+export class CategoriesComponent implements OnInit {
+  activeCategory: string = 'Alle';
+  categories: ProductCategory[] = [];
 
-  setActiveCategory(categoryName: string) {
-    this.activeCategory = categoryName;
+  @Output()
+  update: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor(private productCategoryService: ProductCategoryService) {
+  }
+
+  ngOnInit() {
+    this.getAllCategories();
+  }
+
+  setActiveCategory(category: ProductCategory) {
+    this.activeCategory = category.categoryName!;
+    this.update.emit(category.id);
+  }
+
+  getAllCategories() {
+    this.productCategoryService.getCategoryList().subscribe((categories) => {
+      this.categories = categories;
+    })
   }
 }
