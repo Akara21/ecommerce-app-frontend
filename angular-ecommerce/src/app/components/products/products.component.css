@@ -4,3 +4,8 @@
   display: grid;
   grid-template-columns: 300px 1000px;
 }
+
+.fixed-container {
+  position: fixed;
+}
+

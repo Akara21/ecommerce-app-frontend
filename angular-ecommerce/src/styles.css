@@ -6,8 +6,8 @@ FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
 
-/* 
-MAIN COLOR: #087f5b 
+/*
+MAIN COLOR: #087f5b
 GREY COLOR: #343a40
 */
 
@@ -17,18 +17,9 @@ GREY COLOR: #343a40
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Inter", sans-serif;
   color: #343a40;
-}
-
-html,
-body {
-  height: 100%;
 }
 
 .container {
@@ -48,11 +39,39 @@ body {
 .grid-3-cols {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 60px;
-  row-gap: 50px;
+  row-gap: 40px;
 }
 
 .grid-4-cols {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 60px;
   row-gap: 50px;
+}
+
+
+.btn:link,
+.btn:visited {
+  background-color: #087f5b;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #099268;
+}
+
+.btn--small {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.btn--big {
+  font-size: 18px;
+  padding: 16px 32px;
 }

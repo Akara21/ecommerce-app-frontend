@@ -1,5 +1,10 @@
 <div class="products-grid-container">
-  <app-categories (update)="getProductsByCategoryName($event)"></app-categories>
+  <div class="wrapper-container">
+    <div class="fixed-container">
+      <app-search-bar (search)="getProductsBySearchTerm($event)"></app-search-bar>
+      <app-categories (update)="getProductsByCategoryName($event)"></app-categories>
+    </div>
+  </div>
   <div class="grid grid-3-cols">
     <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
   </div>

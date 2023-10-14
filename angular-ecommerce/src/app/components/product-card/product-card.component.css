@@ -1,47 +1,16 @@
-.btn:link,
-.btn:visited {
-  background-color: #087f5b;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: inline-block;
-  border-radius: 12px;
-  transition: all 0.3s;
-}
-
-.btn:hover,
-.btn:active {
-  background-color: #099268;
-}
-
-.btn--small {
-  font-size: 14px;
-  padding: 8px 12px;
-}
 
 img {
   border-radius: 12px;
-}
-
-.header-text {
-  margin-bottom: 24px;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-img {
   width: 100%;
-  height: 200px;
+  height: 230px;
   object-fit: cover;
 }
 
-/* CHAIRS */
 
 .chair {
-  /* h-offset, v-offset, blur, scale, color  */
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.07);
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .chair img {
@@ -75,7 +44,6 @@ h3 {
 }
 
 .chair-icon {
-  /* or fill for filled icons */
   stroke: #087f5b;
   width: 24px;
   height: 24px;

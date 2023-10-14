@@ -9,7 +9,7 @@ import {ProductService} from "../../shared/services/product.service";
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
-
+  productsCopy: Product[] = [];
 
   constructor(private productService: ProductService) {
   }
@@ -21,15 +21,18 @@ export class ProductsComponent implements OnInit {
   getAllProducts() {
     this.productService.getProductList()
       .subscribe((products) => {
-          console.log(products)
           this.products = products
+          this.productsCopy = [...this.products];
         }
       )
   }
 
   getProductsByCategoryId(id: number) {
     this.productService.getProductsByCategoryId(id)
-      .subscribe((products) => this.products = products)
+      .subscribe((products) => {
+        this.products = products;
+        this.productsCopy = [...this.products]
+      })
   }
 
   getProductsByCategoryName(selectedCategoryId: number) {
@@ -37,6 +40,17 @@ export class ProductsComponent implements OnInit {
       this.getAllProducts();
     } else {
       this.getProductsByCategoryId(selectedCategoryId);
+    }
+  }
+
+  getProductsBySearchTerm(searchTerm: string) {
+    if (searchTerm) {
+      console.log("SEARCH: " + searchTerm)
+      let searchTermLower = searchTerm.toLowerCase();
+      this.products = [...this.productsCopy]
+      this.products = this.products.filter((product) => product.name?.toLowerCase().startsWith(searchTermLower))
+    } else {
+      this.products = [...this.productsCopy]
     }
   }
 }

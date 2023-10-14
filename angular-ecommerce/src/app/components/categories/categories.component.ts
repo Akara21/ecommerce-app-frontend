@@ -12,7 +12,7 @@ export class CategoriesComponent implements OnInit {
   categories: ProductCategory[] = [];
 
   @Output()
-  update: EventEmitter<number> = new EventEmitter<number>();
+  update = new EventEmitter<number>();
 
   constructor(private productCategoryService: ProductCategoryService) {
   }

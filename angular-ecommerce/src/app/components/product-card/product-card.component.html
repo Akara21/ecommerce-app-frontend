@@ -1,7 +1,7 @@
-<figure class="chair">
+<figure (click)="navigateToDetails()" class="chair">
   <img
-    alt="Chair"
-    src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80"
+    [src]="product.imageUrl"
+    alt="product.name"
   />
   <div class="chair-box">
     <h3>{{product.name}}</h3>

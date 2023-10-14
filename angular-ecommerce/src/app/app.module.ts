@@ -14,6 +14,7 @@ import {CategoriesComponent} from './components/categories/categories.component'
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
+import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     ProductsComponent,
     ProductCardComponent,
+    ProductDetailComponent,
     CategoriesComponent,
     SearchBarComponent,
   ],

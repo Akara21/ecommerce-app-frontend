@@ -21,4 +21,9 @@ export class ProductService {
     let url = `http://localhost:8080/api/categories/${id}/products`;
     return this.http.get<Product[]>(url);
   }
+
+  getProductById(id: number): Observable<Product> {
+    let url = `${this.baseUrl}/${id}`;
+    return this.http.get<Product>(url);
+  }
 }
