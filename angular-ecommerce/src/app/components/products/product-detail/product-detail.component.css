@@ -1,8 +1,8 @@
 .product-details-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .product-details-container {
@@ -50,6 +50,7 @@ img {
   height: 600px;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .product-property-container {
@@ -63,8 +64,4 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-img {
-  width: 100%;
 }

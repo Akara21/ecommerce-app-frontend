@@ -9,12 +9,14 @@ import {MaterialModule} from './shared/modules/material/material.module';
 import {HomeComponent} from './components/home/home.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {ProductsComponent} from './components/products/products.component';
-import {ProductCardComponent} from './components/product-card/product-card.component';
+import {ProductCardComponent} from './components/products/product-card/product-card.component';
 import {CategoriesComponent} from './components/categories/categories.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
-import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
+import {ProductDetailComponent} from "./components/products/product-detail/product-detail.component";
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import {ProductDetailComponent} from "./components/product-detail/product-detail
     ProductDetailComponent,
     CategoriesComponent,
     SearchBarComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

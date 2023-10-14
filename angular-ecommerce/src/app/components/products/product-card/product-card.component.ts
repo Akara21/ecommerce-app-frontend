@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Product} from "../../shared/models/Product";
+import {Product} from "../../../shared/models/Product";
 import {Router} from "@angular/router";
 
 @Component({

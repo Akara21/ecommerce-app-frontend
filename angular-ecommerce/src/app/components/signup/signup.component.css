@@ -1,0 +1,76 @@
+.section-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-box {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.login-text-box {
+  padding: 80px 100px 100px 100px;
+  color: #087f5b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.login-header {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.login-img-box {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(8, 127, 91, 0.35),
+    rgba(195, 142, 103, 0.35)
+  ),
+  url("https://images.unsplash.com/photo-1585845786337-2b2b17c55fb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fGNoYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.login-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: rgba(8, 127, 91, 0.05);
+  border-radius: 9px;
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+
+.login-box *:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(8, 127, 91, 0.8);
+  transition: all 0.3s;
+}
+
+.btn-signup {
+  margin-top: 30px;
+}

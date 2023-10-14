@@ -20,6 +20,7 @@ GREY COLOR: #343a40
 body {
   font-family: "Inter", sans-serif;
   color: #343a40;
+  position: relative;
 }
 
 .container {
@@ -59,6 +60,7 @@ body {
   display: inline-block;
   border-radius: 12px;
   transition: all 0.3s;
+  text-align: center;
 }
 
 .btn:hover,
