@@ -13,7 +13,7 @@ export class AuthGuard {
     if (this.authService.isLoggedIn()) {
       return true;
     } else {
-      this.router.navigate(['/login']); // Umleitung zur Anmeldeseite
+      this.router.navigate(['/login']);
       return false;
     }
   }

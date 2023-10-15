@@ -3,6 +3,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s;
 }
 
 .login-box {
@@ -71,11 +72,11 @@
   transition: all 0.3s;
 }
 
-.btn-signup {
+.btn-login {
   margin-top: 30px;
 }
 
-.call-to-signup {
+.call-to-login {
   font-size: 12px;
   margin-top: 28px;
   display: flex;
@@ -84,11 +85,11 @@
   justify-content: center;
 }
 
-.call-to-signup p {
+.call-to-login p {
   color: #999;
 }
 
-.call-to-signup span {
+.call-to-login span {
   font-weight: 600;
   cursor: pointer;
 }

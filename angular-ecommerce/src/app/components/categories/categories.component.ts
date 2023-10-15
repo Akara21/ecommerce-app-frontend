@@ -12,7 +12,7 @@ export class CategoriesComponent implements OnInit {
   categories: ProductCategory[] = [];
 
   @Output()
-  update = new EventEmitter<number>();
+  onSelectCategory = new EventEmitter<number>();
 
   constructor(private productCategoryService: ProductCategoryService) {
   }
@@ -23,7 +23,7 @@ export class CategoriesComponent implements OnInit {
 
   setActiveCategory(category: ProductCategory) {
     this.activeCategory = category.categoryName!;
-    this.update.emit(category.id);
+    this.onSelectCategory.emit(category.id);
   }
 
   getAllCategories() {

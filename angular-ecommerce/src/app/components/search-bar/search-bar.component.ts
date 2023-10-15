@@ -9,15 +9,15 @@ export class SearchBarComponent {
   searchTerm = '';
 
   @Output()
-  search = new EventEmitter<string>
+  onSearchInput = new EventEmitter<string>
 
 
   clearInput() {
     this.searchTerm = '';
-    this.search.emit(this.searchTerm)
+    this.onSearchInput.emit(this.searchTerm)
   }
 
   onSearch() {
-    this.search.emit(this.searchTerm)
+    this.onSearchInput.emit(this.searchTerm)
   }
 }

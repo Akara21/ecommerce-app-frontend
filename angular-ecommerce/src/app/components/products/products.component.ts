@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit {
       })
   }
 
-  getProductsByCategoryName(selectedCategoryId: number) {
+  getProductsBySelectedCategory(selectedCategoryId: number) {
     if (!selectedCategoryId) {
       this.getAllProducts();
     } else {
@@ -45,10 +45,10 @@ export class ProductsComponent implements OnInit {
 
   getProductsBySearchTerm(searchTerm: string) {
     if (searchTerm) {
-      console.log("SEARCH: " + searchTerm)
       let searchTermLower = searchTerm.toLowerCase();
-      this.products = [...this.productsCopy]
-      this.products = this.products.filter((product) => product.name?.toLowerCase().startsWith(searchTermLower))
+      this.products =
+        this.products = [...this.productsCopy
+          .filter((product) => product.name?.toLowerCase().includes(searchTermLower))]
     } else {
       this.products = [...this.productsCopy]
     }

@@ -1,1 +1,36 @@
-<p>signup works!</p>
+<section class="section-signup">
+  <div class="container">
+    <div class="signup-box">
+      <div class="signup-text-box">
+        <h2 class="signup-header">Welcome</h2>
+        <form action="" class="signup-form">
+          <div class="signup-input-container">
+            <label for="firstName">Firstname</label>
+            <input id="firstName" name="firstName" placeholder="Max" type="text">
+          </div>
+          <div class="signup-input-container">
+            <label for="lastName">Lastname</label>
+            <input id="lastName" name="lastName" placeholder="Mustermann" type="text">
+          </div>
+          <div class="signup-input-container">
+            <label for="email">E-Mail</label>
+            <input id="email" name="email" placeholder="max.mustermann@example.com" type="email">
+          </div>
+          <div class="signup-input-container">
+            <label for="password">Password</label>
+            <input id="password" name="password" placeholder="Your password" type="password">
+          </div>
+          <a class="btn btn--big btn-signup" href="#">Sign Up</a>
+        </form>
+        <div class="call-to-signup">
+          <p>Already have an account?</p><span routerLink="/login">Sign In here</span>
+        </div>
+      </div>
+      <div
+        aria-label="chair"
+        class="signup-img-box"
+        role="img"
+      ></div>
+    </div>
+  </div>
+</section>
