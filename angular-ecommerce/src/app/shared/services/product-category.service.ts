@@ -8,7 +8,7 @@ import {ProductCategory} from "../models/ProductCategory";
 })
 export class ProductCategoryService {
 
-  private baseUrl = "http://localhost:8080/api/categories"
+  private baseUrl = "http://localhost:7070/api/categories"
 
   constructor(private http: HttpClient) {
   }
@@ -16,5 +16,5 @@ export class ProductCategoryService {
   getCategoryList(): Observable<ProductCategory[]> {
     return this.http.get<ProductCategory[]>(this.baseUrl);
   }
-  
+
 }
