@@ -1,0 +1,7 @@
+.shopping-cart-container {
+  width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 70fr 30fr;
+  gap: 48px;
+}

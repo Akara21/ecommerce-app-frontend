@@ -6,6 +6,7 @@ import {ProductDetailComponent} from "./components/products/product-detail/produ
 import {LoginComponent} from "./components/login/login.component";
 import {AuthGuard} from "./guards/auth.gurad";
 import {SignupComponent} from "./components/signup/signup.component";
+import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'products/:id',
     component: ProductDetailComponent
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
   }
 ];
 

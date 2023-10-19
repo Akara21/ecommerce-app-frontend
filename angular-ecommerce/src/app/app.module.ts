@@ -17,6 +17,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {ProductDetailComponent} from "./components/products/product-detail/product-detail.component";
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ShoppingCardListComponent } from './components/shopping-cart/shopping-card-list/shopping-card-list.component';
+import { ShoppingCartSummaryComponent } from './components/shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { SignupComponent } from './components/signup/signup.component';
     SearchBarComponent,
     LoginComponent,
     SignupComponent,
+    ShoppingCartComponent,
+    ShoppingCardListComponent,
+    ShoppingCartSummaryComponent,
   ],
   imports: [
     BrowserModule,
