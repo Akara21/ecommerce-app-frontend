@@ -5,3 +5,11 @@
   grid-template-columns: 70fr 30fr;
   gap: 48px;
 }
+
+.shopping-cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-size: 18px;
+  font-weight: 500;
+}

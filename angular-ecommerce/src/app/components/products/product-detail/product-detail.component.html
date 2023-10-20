@@ -83,7 +83,7 @@
           <span>Weighs {{product.weight}} kg</span>
         </div>
       </div>
-      <a class="btn btn--big btn-add-to-cart" routerLink="/products">
+      <a (click)="addProductToShoppingCart()" class="btn btn--big btn-add-to-cart">
         <mat-icon aria-label="cart-icon" class="cart-icon">add_shopping_cart
         </mat-icon>
         <span>Add to cart</span>

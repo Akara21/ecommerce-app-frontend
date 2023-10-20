@@ -1,7 +1,7 @@
-<figure (click)="navigateToDetails()" class="chair">
-  <img
-    [src]="product.imageUrl"
-    alt="product.name"
+<figure class="chair">
+  <img (click)="navigateToDetails()"
+       [src]="product.imageUrl"
+       alt="product.name"
   />
   <div class="chair-box">
     <h3>{{product.name}}</h3>
@@ -81,8 +81,8 @@
       </li>
     </ul>
     <div class="chair-price">
-      <strong>{{product.price}}€</strong>
-      <a class="btn btn--small" href="#">Add to cart</a>
+      <strong>{{ product.price }}€</strong>
+      <a (click)="addProductToShoppingCart()" class="btn btn--small">Add to cart</a>
     </div>
   </div>
 </figure>

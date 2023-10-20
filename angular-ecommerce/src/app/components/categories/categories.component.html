@@ -6,7 +6,7 @@
       class="category-item"
     >
       <p class="category-name">Alle</p>
-      <span class="category-amount">12</span>
+      <span class="category-amount">{{totalAmountOfProduct}}</span>
     </div>
     <div
       (click)="setActiveCategory(category)"
@@ -15,7 +15,7 @@
       class="category-item"
     >
       <p class="category-name">{{ category.categoryName }}</p>
-      <span class="category-amount">12</span>
+      <span class="category-amount">{{category.amountOfProducts}}</span>
     </div>
   </div>
 </section>

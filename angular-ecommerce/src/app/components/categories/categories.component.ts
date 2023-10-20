@@ -10,6 +10,7 @@ import {ProductCategoryService} from "../../shared/services/product-category.ser
 export class CategoriesComponent implements OnInit {
   activeCategory: string = 'Alle';
   categories: ProductCategory[] = [];
+  totalAmountOfProduct: number = 0;
 
   @Output()
   onSelectCategory = new EventEmitter<number>();
@@ -29,6 +30,11 @@ export class CategoriesComponent implements OnInit {
   getAllCategories() {
     this.productCategoryService.getCategoryList().subscribe((categories) => {
       this.categories = categories;
+      this.getTotalAmountOfProducts();
     })
+  }
+
+  getTotalAmountOfProducts() {
+    this.categories.forEach(category => this.totalAmountOfProduct += category.amountOfProducts!);
   }
 }

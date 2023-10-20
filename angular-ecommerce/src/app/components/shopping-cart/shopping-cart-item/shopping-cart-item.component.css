@@ -1,12 +1,4 @@
 
-.shopping-cart-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
 .shopping-cart-list-item {
   border-radius: 12px;
   background-color: #fff;
@@ -59,6 +51,7 @@
   width: max-content;
   align-items: center;
   gap: 32px;
+  cursor: pointer;
 }
 
 .text-container {

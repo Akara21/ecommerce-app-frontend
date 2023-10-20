@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from "../../shared/models/Product";
 import {ProductService} from "../../shared/services/product.service";
+import {ShoppingCartService} from "../../shared/services/shopping-cart.service";
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,7 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
   productsCopy: Product[] = [];
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private shoppingCartService: ShoppingCartService) {
   }
 
   ngOnInit() {
@@ -52,5 +53,9 @@ export class ProductsComponent implements OnInit {
     } else {
       this.products = [...this.productsCopy]
     }
+  }
+
+  addProductToShoppingCart(product: Product) {
+    this.shoppingCartService.addOrderItem(product);
   }
 }

@@ -1,0 +1,18 @@
+<div class="shopping-cart-list-item">
+  <div (click)="navigateToDetails()" class="product-container">
+    <div class="image-container">
+      <img [src]="orderItem.imageUrl" alt=""
+           class="shopping-cart-list-item-img">
+    </div>
+    <div class="text-container"><p>{{orderItem.name}}</p></div>
+  </div>
+  <p class="product-price">{{orderItem.price}}€</p>
+  <div class="shopping-cart-quantity-container">
+    <mat-icon (click)="decreaseQuantity()" class="icon-remove">remove</mat-icon>
+    <span>{{orderItem.quantity}}</span>
+    <mat-icon (click)="increaseQuantity()" class="icon-add">add</mat-icon>
+  </div>
+  <button class="btn-remove">
+    <mat-icon (click)="deleteOrderItem()" class="icon-close">close</mat-icon>
+  </button>
+</div>

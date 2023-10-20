@@ -23,6 +23,10 @@
   background-color: #087f5b;
   border-radius: 8px;
   padding: 8px;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-item:hover {

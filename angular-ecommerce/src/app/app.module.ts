@@ -15,11 +15,13 @@ import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {ProductDetailComponent} from "./components/products/product-detail/product-detail.component";
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { ShoppingCardListComponent } from './components/shopping-cart/shopping-card-list/shopping-card-list.component';
-import { ShoppingCartSummaryComponent } from './components/shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
+import {LoginComponent} from './components/login/login.component';
+import {SignupComponent} from './components/signup/signup.component';
+import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
+import {
+  ShoppingCartSummaryComponent
+} from './components/shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
+import {ShoppingCartItemComponent} from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,8 @@ import { ShoppingCartSummaryComponent } from './components/shopping-cart/shoppin
     LoginComponent,
     SignupComponent,
     ShoppingCartComponent,
-    ShoppingCardListComponent,
     ShoppingCartSummaryComponent,
+    ShoppingCartItemComponent,
   ],
   imports: [
     BrowserModule,
