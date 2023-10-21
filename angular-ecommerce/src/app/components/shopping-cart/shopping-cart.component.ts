@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ShoppingCartService} from "../../shared/services/shopping-cart.service";
-import {OrderItem} from "../../shared/models/OrderItem";
+import {CartItem} from "../../shared/models/CartItem";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,30 +9,35 @@ import {OrderItem} from "../../shared/models/OrderItem";
 })
 export class ShoppingCartComponent implements OnInit {
 
-  orderItems: OrderItem[] = [];
+  orderItems: CartItem[] = [];
   total: number = 0;
 
   constructor(private shoppingCartService: ShoppingCartService) {
   }
 
   ngOnInit() {
+    this.shoppingCartService.loadCart();
     this.getShoppingCartList();
   }
 
-  decreaseQuantity(orderItem: OrderItem) {
-    this.shoppingCartService.reduceQuantity(orderItem);
+  decreaseQuantity(cartItem: CartItem) {
+    this.shoppingCartService.decreaseQuantity(cartItem);
   }
 
-  increaseQuantity(orderItem: OrderItem) {
+  /*increaseQuantity(orderItem: CartItem) {
     this.shoppingCartService.addQuantity(orderItem);
+  }*/
+
+  addCartItem(cartItem: CartItem) {
+    this.shoppingCartService.addCartItem(cartItem.product)
   }
 
-  deleteOrderItem(orderItem: OrderItem) {
-    this.shoppingCartService.deleteOrderItem(orderItem);
+  deleteCartItem(cartItem: CartItem) {
+    this.shoppingCartService.deleteCartItem(cartItem)
   }
 
   getShoppingCartList() {
-    this.shoppingCartService.orderItems$.subscribe(items => {
+    this.shoppingCartService.cartItems$.subscribe(items => {
       this.orderItems = items;
     });
   }

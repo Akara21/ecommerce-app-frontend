@@ -13,7 +13,7 @@ import {ProductCardComponent} from './components/products/product-card/product-c
 import {CategoriesComponent} from './components/categories/categories.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ProductDetailComponent} from "./components/products/product-detail/product-detail.component";
 import {LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
@@ -22,6 +22,7 @@ import {
   ShoppingCartSummaryComponent
 } from './components/shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
 import {ShoppingCartItemComponent} from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
+import {AuthInterceptor} from "./shared/interceptors/AuthInterceptor";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,14 @@ import {ShoppingCartItemComponent} from './components/shopping-cart/shopping-car
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

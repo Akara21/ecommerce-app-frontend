@@ -56,6 +56,6 @@ export class ProductsComponent implements OnInit {
   }
 
   addProductToShoppingCart(product: Product) {
-    this.shoppingCartService.addOrderItem(product);
+    this.shoppingCartService.addCartItem(product);
   }
 }

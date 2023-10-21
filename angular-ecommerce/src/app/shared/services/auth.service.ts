@@ -1,23 +1,101 @@
 import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {UserLogin} from "../models/UserLogin";
+import {SnackBarService} from "./snack-bar.service";
+import {UserRegister} from "../models/UserRegister";
+import {ShoppingCartService} from "./shopping-cart.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private isAuthenticated = true
-  ;
+  private isAuthenticated = false;
+  private baseUrl: string = "http://localhost:7070/api/auth"
 
-  constructor() {
+  private user: string | null = null;
+  private token: string | null = null;
+  private returnUrl = '/';
+
+  constructor(private router: Router,
+              private http: HttpClient,
+              private snackBarService: SnackBarService,
+              private shoppingCartService: ShoppingCartService) {
+    const storedUser = localStorage.getItem('user');
+    const storedToken = localStorage.getItem('token');
+
+    if (storedUser && storedToken) {
+      this.user = JSON.parse(storedUser);
+      this.token = JSON.parse(storedToken);
+      this.isAuthenticated = true;
+    }
   }
 
-  login() {
+  login(userLogin: UserLogin) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    const {email, password} = userLogin;
+
+    return this.http.post(this.baseUrl + "/login", userLogin, {
+      headers,
+      responseType: 'text'
+    }).subscribe(
+      (response: string) => {
+        this.user = email!;
+        this.token = response;
+        this.isAuthenticated = true;
+        localStorage.setItem('user', JSON.stringify(email!));
+        localStorage.setItem('token', JSON.stringify(response));
+        this.shoppingCartService.loadCart();
+        this.router.navigate([this.returnUrl])
+      },
+      (error) => {
+        console.log("Invalid Credentials");
+      })
   }
+
+  register(userRegister: UserRegister) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.post(this.baseUrl + "/register", userRegister, {
+      headers,
+    }).subscribe(
+      (response) => {
+        this.snackBarService.openSnackBar("Successfully registered!");
+      },
+      (error) => {
+        console.log(error);
+      })
+
+  }
+
 
   logout() {
+    this.isAuthenticated = false;
+    this.user = null;
+    this.token = null;
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    this.shoppingCartService.clearCart();
+    this.router.navigate(['/login']);
   }
 
   isLoggedIn(): boolean {
     return this.isAuthenticated;
   }
+
+  getToken() {
+    return this.token;
+  }
+
+  getUser() {
+    return this.user;
+  }
+
+
 }

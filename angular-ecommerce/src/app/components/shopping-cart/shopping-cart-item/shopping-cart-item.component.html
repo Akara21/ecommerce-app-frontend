@@ -1,12 +1,12 @@
 <div class="shopping-cart-list-item">
   <div (click)="navigateToDetails()" class="product-container">
     <div class="image-container">
-      <img [src]="orderItem.imageUrl" alt=""
+      <img [src]="orderItem.product.imageUrl" alt=""
            class="shopping-cart-list-item-img">
     </div>
-    <div class="text-container"><p>{{orderItem.name}}</p></div>
+    <div class="text-container"><p>{{orderItem.product.name}}</p></div>
   </div>
-  <p class="product-price">{{orderItem.price}}€</p>
+  <p class="product-price">{{orderItem.product.price}}€</p>
   <div class="shopping-cart-quantity-container">
     <mat-icon (click)="decreaseQuantity()" class="icon-remove">remove</mat-icon>
     <span>{{orderItem.quantity}}</span>

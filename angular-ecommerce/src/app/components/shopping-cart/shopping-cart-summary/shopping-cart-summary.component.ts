@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {OrderItem} from "../../../shared/models/OrderItem";
+import {CartItem} from "../../../shared/models/CartItem";
 import {ShoppingCartService} from "../../../shared/services/shopping-cart.service"; // Importiere deinen ShoppingCartService
 
 @Component({
@@ -15,12 +15,12 @@ export class ShoppingCartSummaryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.shoppingCartService.orderItems$.subscribe(orderItems => {
-      this.total = this.calculateTotal(orderItems);
+    this.shoppingCartService.cartItems$.subscribe(cartItems => {
+      this.total = this.calculateTotal(cartItems);
     });
   }
 
-  private calculateTotal(orderItems: OrderItem[]): number {
-    return orderItems.reduce((total, item) => total + (item.price! * item.quantity!), 0.0);
+  private calculateTotal(orderItems: CartItem[]): number {
+    return orderItems.reduce((total, item) => total + (item.product.price! * item.quantity!), 0.0);
   }
 }

@@ -1,79 +1,91 @@
 import {Injectable} from '@angular/core';
-import {OrderItem} from "../models/OrderItem";
-import {Product} from "../models/Product";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {CartItem} from "../models/CartItem";
 import {BehaviorSubject, Observable} from "rxjs";
+import {SnackBarService} from "./snack-bar.service";
+import {HttpClient} from "@angular/common/http";
+import {Product} from "../models/Product";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
 
-
+  private baseUrl: string = "http://localhost:7070/api/cart"
   private total: number = 0;
+  private _cartItems: CartItem[] = [];
+  private cartItemsSubject = new BehaviorSubject<CartItem[]>(this._cartItems);
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private snackBarService: SnackBarService, private http: HttpClient) {
   }
 
-  private _orderItems: OrderItem[] = [];
-
-  private orderItemsSubject = new BehaviorSubject<OrderItem[]>(this._orderItems);
-
-  set orderItems(value: OrderItem[]) {
-    this._orderItems = value;
-  }
-
-  get orderItems$(): Observable<OrderItem[]> {
-    return this.orderItemsSubject.asObservable();
+  get cartItems$(): Observable<CartItem[]> {
+    return this.cartItemsSubject.asObservable();
   }
 
   updateCart() {
     this.total = this.getTotalPrice();
-    this.orderItemsSubject.next(this._orderItems);
+    this.cartItemsSubject.next(this._cartItems);
   }
 
-  addOrderItem(product: Product) {
-    const {price, id, imageUrl, name} = product;
-    let orderItemFound = this._orderItems.find(orderItem => orderItem.id === id);
-    if (!orderItemFound) {
-      let orderItem: OrderItem = {id, price, quantity: 1, imageUrl, name};
-      this._orderItems.push(orderItem);
-    } else {
-      orderItemFound.quantity!++;
-    }
-    this.updateCart();
-    this.openSnackBar("Product Successfully added!");
+  addCartItem(product: Product) {
+    let cartItem: CartItem = {product, quantity: 1}
+    this.http.post(this.baseUrl, cartItem).subscribe(
+      (response) => {
+        this.loadCart();
+        this.updateCart();
+      },
+      (error) => {
+        console.log("Product could not be added!")
+      }
+    );
   }
-
 
   getTotalPrice(): number {
-    this.total = this._orderItems.reduce((previousValue, currentItem) => previousValue + (currentItem.price! * currentItem.quantity!), 0.00);
-    this.orderItemsSubject.next(this._orderItems);
+    this.total = this._cartItems.reduce((previousValue, currentItem) => previousValue + (currentItem.product.price! * currentItem.quantity!), 0.00);
+    this.cartItemsSubject.next(this._cartItems);
     return this.total;
   }
 
-
-  addQuantity(orderItem: OrderItem) {
-    orderItem.quantity!++;
-    this.updateCart();
+  decreaseQuantity(cartItem: CartItem) {
+    let cartItemTemp: CartItem = {...cartItem};
+    cartItem.quantity = 1;
+    this.http.put(this.baseUrl + "/decreaseQuantity", cartItem).subscribe(
+      (response) => {
+        this.loadCart();
+        this.updateCart();
+      },
+      (error) => {
+        console.log("Could not delete product!")
+      }
+    );
   }
 
-  reduceQuantity(orderItem: OrderItem) {
-    if (orderItem.quantity === 1) {
-      this.deleteOrderItem(orderItem);
-    } else {
-      orderItem.quantity!--;
-    }
-    this.updateCart();
+  deleteCartItem(cartItem: CartItem) {
+    this.http.post(this.baseUrl + "/delete", cartItem).subscribe(
+      (response) => {
+        this._cartItems = this._cartItems.filter((cartItemTemp) => cartItemTemp.product.id !== cartItem.product.id);
+        this.snackBarService.openSnackBar('Product Successfully deleted!');
+        this.updateCart();
+      },
+      (error) => {
+        console.log("Could not delete product!")
+      }
+    );
   }
 
-  deleteOrderItem(orderItemToDelete: OrderItem) {
-    this._orderItems = this._orderItems.filter(orderItem => orderItem.id !== orderItemToDelete.id);
-    this.updateCart();
+  clearCart() {
+    this._cartItems = [];
+    this.cartItemsSubject.next(this._cartItems);
   }
 
-  openSnackBar(message: string) {
-    this._snackBar.open(message, '', {duration: 2000, panelClass: 'green-snackbar'});
+  loadCart() {
+    this.http.get<CartItem[]>(this.baseUrl).subscribe((cartItems) => {
+      this._cartItems = cartItems;
+      console.log(this._cartItems)
+      this.updateCart();
+    }, error => {
+      console.log("Could not get CartItems!")
+    })
   }
 
 }

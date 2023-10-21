@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {OrderItem} from "../../../shared/models/OrderItem";
+import {CartItem} from "../../../shared/models/CartItem";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,22 +10,22 @@ import {Router} from "@angular/router";
 export class ShoppingCartItemComponent {
 
   @Input()
-  orderItem: OrderItem = {}
+  orderItem: CartItem = {product: {}}
 
   @Output()
-  onIncreaseQuantity = new EventEmitter<OrderItem>();
+  onIncreaseQuantity = new EventEmitter<CartItem>();
 
   @Output()
-  onDeceaseQuantity = new EventEmitter<OrderItem>();
+  onDeceaseQuantity = new EventEmitter<CartItem>();
 
   @Output()
-  onDeleteOrderItem = new EventEmitter<OrderItem>();
+  onDeleteOrderItem = new EventEmitter<CartItem>();
 
   constructor(private router: Router) {
   }
 
   navigateToDetails() {
-    this.router.navigate([`products/${this.orderItem.id}`]);
+    this.router.navigate([`products/${this.orderItem.product.id}`]);
   }
 
   increaseQuantity() {

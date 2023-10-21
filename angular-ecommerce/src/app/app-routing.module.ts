@@ -10,9 +10,24 @@ import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.co
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
+    path: '', canActivate: [AuthGuard], children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+      },
+      {
+        path: 'products/:id',
+        component: ProductDetailComponent
+      },
+      {
+        path: 'shopping-cart',
+        component: ShoppingCartComponent,
+      }
+    ]
   },
   {
     path: 'login',
@@ -22,18 +37,7 @@ const routes: Routes = [
     path: 'signup',
     component: SignupComponent
   },
-  {
-    path: 'products',
-    component: ProductsComponent,
-  },
-  {
-    path: 'products/:id',
-    component: ProductDetailComponent
-  },
-  {
-    path: 'shopping-cart',
-    component: ShoppingCartComponent,
-  }
+
 ];
 
 @NgModule({

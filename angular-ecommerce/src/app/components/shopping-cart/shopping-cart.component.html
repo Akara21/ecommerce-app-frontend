@@ -2,8 +2,8 @@
   <div class="shopping-cart-list">
     <div *ngIf="!orderItems.length">No Items in the Shopping Cart</div>
     <app-shopping-cart-item (onDeceaseQuantity)="decreaseQuantity($event)"
-                            (onDeleteOrderItem)="deleteOrderItem($event)"
-                            (onIncreaseQuantity)="increaseQuantity($event)"
+                            (onDeleteOrderItem)="deleteCartItem($event)"
+                            (onIncreaseQuantity)="addCartItem($event)"
                             *ngFor="let orderItem of orderItems" [orderItem]="orderItem"></app-shopping-cart-item>
   </div>
   <app-shopping-cart-summary></app-shopping-cart-summary>

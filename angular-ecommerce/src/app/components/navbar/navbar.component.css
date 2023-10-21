@@ -30,7 +30,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  gap: 48px;
+  gap: 32px;
 }
 
 .main-nav-link:link,
@@ -91,7 +91,34 @@
   color: #087f5b;
   line-height: 30px;
   text-align: center;
-  font-size: 16px;
   width: 30px;
+  font-size: 18px;
   height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-logout {
+  color: #087f5b;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.btn--logout {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-color: transparent;
+  border-radius: 12px;
+  color: #333;
+  font-weight: 500;
+  font-size: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn--logout:hover {
+  background-color: #dbdbdb;
 }

@@ -3,16 +3,18 @@
     <div class="login-box">
       <div class="login-text-box">
         <h2 class="login-header">Welcome</h2>
-        <form action="" class="login-form">
+        <form (ngSubmit)="login()" action="" class="login-form">
           <div class="login-input-container">
-            <label for="email">E-Mail</label>
-            <input id="email" name="email" placeholder="max.mustermann@example.com" type="email">
+            <label for="email">Email</label>
+            <input [(ngModel)]="user.email" id="email" name="email" placeholder="max.mustermann@example.com"
+                   type="email">
           </div>
           <div class="login-input-container">
             <label for="password">Password</label>
-            <input id="password" name="password" placeholder="Your password" type="password">
+            <input [(ngModel)]="user.password" id="password" name="password" placeholder="Enter your password"
+                   type="password">
           </div>
-          <a class="btn btn--big btn-login" href="#">Sign In</a>
+          <button class="btn btn--big btn-login" type="submit">Sign In</button>
         </form>
         <div class="call-to-login">
           <p>Don't have an account?</p><span routerLink="/signup">Sign up here</span>

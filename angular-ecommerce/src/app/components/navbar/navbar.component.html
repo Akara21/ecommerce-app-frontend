@@ -18,8 +18,16 @@
           </mat-icon
           >
           <span class="cart-text">Cart</span>
-          <span class="cart-item-amount">23</span>
+          <p class="cart-item-amount"><span>{{amountOfShoppingCartItems}}</span></p>
         </a>
+      </li>
+      <li>
+        <button (click)="logout()" class="btn--logout">
+          <mat-icon aria-label="cart-icon" class="cart-icon"
+          >exit_to_app
+          </mat-icon
+          >
+        </button>
       </li>
     </ul>
   </nav>

@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addProductToShoppingCart() {
-    this.shoppingCartService.addOrderItem(this.product);
+    this.shoppingCartService.addCartItem(this.product);
   }
 
 }
