@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class ShoppingCartItemComponent {
 
   @Input()
-  orderItem: CartItem = {product: {}}
+  cartItem: CartItem = {product: {}}
 
   @Output()
   onIncreaseQuantity = new EventEmitter<CartItem>();
@@ -25,19 +25,19 @@ export class ShoppingCartItemComponent {
   }
 
   navigateToDetails() {
-    this.router.navigate([`products/${this.orderItem.product.id}`]);
+    this.router.navigate([`products/${this.cartItem.product.id}`]);
   }
 
   increaseQuantity() {
-    this.onIncreaseQuantity.emit(this.orderItem);
+    this.onIncreaseQuantity.emit(this.cartItem);
   }
 
   decreaseQuantity() {
-    this.onDeceaseQuantity.emit(this.orderItem);
+    this.onDeceaseQuantity.emit(this.cartItem);
   }
 
   deleteOrderItem() {
-    this.onDeleteOrderItem.emit(this.orderItem);
+    this.onDeleteOrderItem.emit(this.cartItem);
   }
 
 }

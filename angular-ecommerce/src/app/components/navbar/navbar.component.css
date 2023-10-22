@@ -14,7 +14,7 @@
   height: 76px;
   padding: 0 64px;
   z-index: 999;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .logo {
@@ -115,10 +115,19 @@
   color: #333;
   font-weight: 500;
   font-size: 20px;
-  transition: all 0.3s;
+  transition: background-color 0.3s, transform 0.1s; /* Add a transition for background color and transform */
   cursor: pointer;
+  background-color: #ebebeb;
 }
 
 .btn--logout:hover {
-  background-color: #dbdbdb;
+  background-color: #d9d9d9;
 }
+
+.btn--logout:active {
+  background-color: #ccc;
+  transform: scale(0.95); /* Add a slight scale-down effect when the button is clicked */
+}
+
+
+

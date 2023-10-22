@@ -7,5 +7,5 @@
     </ul>
     <div class="order-summary-total-container"><p>Total</p><span>{{ total | number: '1.2-2' }}€</span></div>
   </div>
-  <a class="btn btn--big" href="#">Checkout</a>
+  <button (click)="openConfirmationDialog()" class="btn btn--big btn--checkout">Checkout</button>
 </div>

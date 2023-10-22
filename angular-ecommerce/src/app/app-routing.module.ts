@@ -7,6 +7,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {AuthGuard} from "./guards/auth.gurad";
 import {SignupComponent} from "./components/signup/signup.component";
 import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
+import {OrderComponent} from "./components/order/order.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'shopping-cart',
         component: ShoppingCartComponent,
+      },
+      {
+        path: 'orders',
+        component: OrderComponent
       }
     ]
   },

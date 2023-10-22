@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 import {CartItem} from "../../../shared/models/CartItem";
-import {ShoppingCartService} from "../../../shared/services/shopping-cart.service"; // Importiere deinen ShoppingCartService
+import {ShoppingCartService} from "../../../shared/services/shopping-cart.service";
+import {MatDialog} from "@angular/material/dialog";
+import {ConfirmationDialogComponent} from "../../confirmation-dialog/confirmation-dialog.component"; // Importiere deinen ShoppingCartService
 
 @Component({
   selector: 'app-shopping-cart-summary',
@@ -11,12 +13,34 @@ import {ShoppingCartService} from "../../../shared/services/shopping-cart.servic
 export class ShoppingCartSummaryComponent implements OnInit {
   total: number = 0.00;
 
-  constructor(private shoppingCartService: ShoppingCartService) {
+  @Output()
+  onCheckout = new EventEmitter<any>()
+
+  constructor(private shoppingCartService: ShoppingCartService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
     this.shoppingCartService.cartItems$.subscribe(cartItems => {
       this.total = this.calculateTotal(cartItems);
+    });
+  }
+
+  checkout() {
+    this.onCheckout.emit();
+  }
+
+  openConfirmationDialog() {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '400px',
+      data: {
+        confirmationText: 'Do you want to place this order?'
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.checkout();
+      }
     });
   }
 

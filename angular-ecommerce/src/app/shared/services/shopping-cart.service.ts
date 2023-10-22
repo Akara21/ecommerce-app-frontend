@@ -48,8 +48,8 @@ export class ShoppingCartService {
 
   decreaseQuantity(cartItem: CartItem) {
     let cartItemTemp: CartItem = {...cartItem};
-    cartItem.quantity = 1;
-    this.http.put(this.baseUrl + "/decreaseQuantity", cartItem).subscribe(
+    cartItemTemp.quantity = 1;
+    this.http.put(this.baseUrl + "/decreaseQuantity", cartItemTemp).subscribe(
       (response) => {
         this.loadCart();
         this.updateCart();

@@ -23,6 +23,10 @@ import {
 } from './components/shopping-cart/shopping-cart-summary/shopping-cart-summary.component';
 import {ShoppingCartItemComponent} from './components/shopping-cart/shopping-cart-item/shopping-cart-item.component';
 import {AuthInterceptor} from "./shared/interceptors/AuthInterceptor";
+import {OrderComponent} from './components/order/order.component';
+import {DatePipe} from "@angular/common";
+import {ConfirmationDialogComponent} from './components/confirmation-dialog/confirmation-dialog.component';
+import { OrderItemComponent } from './components/order/order-item/order-item.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,9 @@ import {AuthInterceptor} from "./shared/interceptors/AuthInterceptor";
     ShoppingCartComponent,
     ShoppingCartSummaryComponent,
     ShoppingCartItemComponent,
+    OrderComponent,
+    ConfirmationDialogComponent,
+    OrderItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,7 @@ import {AuthInterceptor} from "./shared/interceptors/AuthInterceptor";
       useClass: AuthInterceptor,
       multi: true
     },
-
+    DatePipe
   ],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ShoppingCartService} from "../../shared/services/shopping-cart.service";
 import {CartItem} from "../../shared/models/CartItem";
+import {OrderService} from "../../shared/services/order.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,10 +11,10 @@ import {CartItem} from "../../shared/models/CartItem";
 })
 export class ShoppingCartComponent implements OnInit {
 
-  orderItems: CartItem[] = [];
+  cartItems: CartItem[] = [];
   total: number = 0;
 
-  constructor(private shoppingCartService: ShoppingCartService) {
+  constructor(private shoppingCartService: ShoppingCartService, private orderService: OrderService, private router: Router) {
   }
 
   ngOnInit() {
@@ -24,10 +26,6 @@ export class ShoppingCartComponent implements OnInit {
     this.shoppingCartService.decreaseQuantity(cartItem);
   }
 
-  /*increaseQuantity(orderItem: CartItem) {
-    this.shoppingCartService.addQuantity(orderItem);
-  }*/
-
   addCartItem(cartItem: CartItem) {
     this.shoppingCartService.addCartItem(cartItem.product)
   }
@@ -38,7 +36,19 @@ export class ShoppingCartComponent implements OnInit {
 
   getShoppingCartList() {
     this.shoppingCartService.cartItems$.subscribe(items => {
-      this.orderItems = items;
+      this.cartItems = items;
     });
   }
+
+  checkout() {
+    console.log("ITEMS TO CHECKOUT ", this.cartItems)
+    this.orderService.addOrders(this.cartItems).subscribe(response => {
+      console.log("SUCCESS")
+      this.router.navigate(['orders'])
+    }, error => {
+      console.log("ERROR: ", error)
+    })
+  }
+
+
 }

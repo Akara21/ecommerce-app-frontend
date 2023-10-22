@@ -1,11 +1,11 @@
 <div class="shopping-cart-container">
   <div class="shopping-cart-list">
-    <div *ngIf="!orderItems.length">No Items in the Shopping Cart</div>
+    <div *ngIf="!cartItems.length">No Items in the Shopping Cart</div>
     <app-shopping-cart-item (onDeceaseQuantity)="decreaseQuantity($event)"
                             (onDeleteOrderItem)="deleteCartItem($event)"
                             (onIncreaseQuantity)="addCartItem($event)"
-                            *ngFor="let orderItem of orderItems" [orderItem]="orderItem"></app-shopping-cart-item>
+                            *ngFor="let cartItem of cartItems" [cartItem]="cartItem"></app-shopping-cart-item>
   </div>
-  <app-shopping-cart-summary></app-shopping-cart-summary>
+  <app-shopping-cart-summary (onCheckout)="checkout()"></app-shopping-cart-summary>
 </div>
 

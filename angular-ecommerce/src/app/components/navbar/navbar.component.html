@@ -22,12 +22,21 @@
         </a>
       </li>
       <li>
-        <button (click)="logout()" class="btn--logout">
-          <mat-icon aria-label="cart-icon" class="cart-icon"
-          >exit_to_app
-          </mat-icon
-          >
+        <button [matMenuTriggerFor]="menu" aria-label="user" class="btn--logout">
+          <mat-icon>account_circle</mat-icon>
+
         </button>
+        <mat-menu #menu="matMenu" class="mat-menu">
+          <button class="mat-menu-item" mat-menu-item routerLink="/orders">
+            <mat-icon>shopping_basket</mat-icon>
+            <span>My Orders</span>
+          </button>
+          <button (click)="logout()" mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+
       </li>
     </ul>
   </nav>

@@ -1,0 +1,10 @@
+.order-container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
