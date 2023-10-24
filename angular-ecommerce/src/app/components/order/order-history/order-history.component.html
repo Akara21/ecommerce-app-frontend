@@ -1,0 +1,22 @@
+<section class="order-summary-container">
+  <p class="order-history">Orders History</p>
+  <div
+    (click)="setActiveOrderId(order)"
+    *ngFor="let order of orders"
+    [class.active]="activeOrderId === order.id"
+    class="order-summary-item"
+  >
+    <div class="order-info-container">
+      <p class="order-summary-name">#{{ order.id }}</p>
+      <p class="order-total-amount">EUR {{order.totalAmount}}€</p>
+      <p class="order-summary-amount">{{order.orderItems?.length}}<span>item(s)</span></p>
+    </div>
+    <div class="order-delivery-info">
+      <p class="delivered-flex-container">
+        <mat-icon class="delivery-icon">local_shipping</mat-icon>
+        <span>Delivered</span>
+      </p>
+      <p class="delivery-date">{{order.orderDate}}</p>
+    </div>
+  </div>
+</section>

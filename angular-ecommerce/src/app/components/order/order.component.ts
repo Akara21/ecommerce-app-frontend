@@ -10,6 +10,7 @@ import {DatePipe} from "@angular/common";
 })
 export class OrderComponent implements OnInit {
   orders: Order[] = [];
+  selectedOrder!: Order;
 
   constructor(private orderService: OrderService, private datePipe: DatePipe) {
   }
@@ -27,5 +28,9 @@ export class OrderComponent implements OnInit {
       }
       this.orders = orders;
     })
+  }
+
+  getOrderItems(order: Order) {
+    this.selectedOrder = order;
   }
 }

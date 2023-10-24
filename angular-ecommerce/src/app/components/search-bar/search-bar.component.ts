@@ -10,8 +10,7 @@ export class SearchBarComponent {
 
   @Output()
   onSearchInput = new EventEmitter<string>
-
-
+  
   clearInput() {
     this.searchTerm = '';
     this.onSearchInput.emit(this.searchTerm)

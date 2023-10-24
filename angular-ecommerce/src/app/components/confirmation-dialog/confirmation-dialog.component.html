@@ -3,6 +3,8 @@
   {{ data.confirmationText }}
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button (click)="onYesClick()" [mat-dialog-close]="true" mat-button>Place Order</button>
-  <button (click)="onNoClick()" mat-button mat-dialog-close>Cancel</button>
+  <button (click)="onYesClick()" [mat-dialog-close]="true" class="btn--dialog btn--buy">Buy
+    - {{ data.price | number: '1.2-2' }}€
+  </button>
+  <button (click)="onNoClick()" class="btn--dialog btn--cancel">Cancel</button>
 </mat-dialog-actions>

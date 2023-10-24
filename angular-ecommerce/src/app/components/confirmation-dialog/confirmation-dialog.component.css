@@ -1,7 +1,46 @@
 mat-dialog-actions {
   padding: 20px !important;
+  display: flex;
+  gap: 12px;
 }
 
 mat-dialog-content {
-  font-family: "Inter", sans-serif !important;
+  font-family: inherit !important;
 }
+
+.btn--dialog {
+  transition: background-color 0.3s, scale 0.1s;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+.btn--buy {
+  color: #087f5b !important;
+  background-color: rgba(8, 127, 91, 0.1);
+}
+
+.btn--dialog:active {
+  scale: 0.95;
+}
+
+.btn--buy:hover {
+  background-color: rgba(8, 127, 91, 0.2);
+
+}
+
+
+.btn--cancel {
+  background-color: transparent;
+}
+
+.btn--cancel:hover {
+  background-color: #e0e0e0;
+}
+
+

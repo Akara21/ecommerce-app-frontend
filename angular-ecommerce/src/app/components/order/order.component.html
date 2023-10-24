@@ -1,7 +1,6 @@
 <div class="order-container">
-  <div class="order-list">
-    <div *ngIf="!orders.length">No Orders!</div>
-    <app-order-item
-      *ngFor="let order of orders" [order]="order"></app-order-item>
+  <div class="fixed-container">
+    <app-order-history (onSelectOrder)="getOrderItems($event)" [orders]="orders"></app-order-history>
   </div>
+  <app-order-list [order]="selectedOrder"></app-order-list>
 </div>

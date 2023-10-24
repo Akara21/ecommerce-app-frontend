@@ -1,0 +1,19 @@
+<div *ngIf="order" class="order-list-container">
+  <p class="order-header">Order #{{order.id}}<span>({{order.orderItems?.length}})</span></p>
+  <div *ngFor="let orderItem of order?.orderItems" class="order-list-item">
+    <div class="product-container">
+      <div class="image-container">
+        <img [src]="orderItem.product?.imageUrl" alt=""
+             class="order-list-item-img">
+      </div>
+      <div class="order-info-container">
+        <p class="order-item-name">{{orderItem.product?.name}}</p>
+        <p class="order-item-quantity">{{orderItem.quantity}}<span>Item(s)</span></p>
+      </div>
+    </div>
+    <div class="order-info-container">
+      <p class="order-item-price">{{getOrderAmount(orderItem.quantity!, orderItem.product?.price!)}}€</p>
+      <p class="free-shipment-text">Free Shipment</p>
+    </div>
+  </div>
+</div>

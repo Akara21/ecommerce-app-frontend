@@ -129,5 +129,13 @@
   transform: scale(0.95); /* Add a slight scale-down effect when the button is clicked */
 }
 
+.icon-dropdown {
+  color: #087f5b !important;
+}
 
+.text-dropown {
+  font-family: inherit !important;
+  color: #343a40 !important;
+  font-size: 18px;
+}
 

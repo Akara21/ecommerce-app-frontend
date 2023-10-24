@@ -4,7 +4,8 @@
     <app-shopping-cart-item (onDeceaseQuantity)="decreaseQuantity($event)"
                             (onDeleteOrderItem)="deleteCartItem($event)"
                             (onIncreaseQuantity)="addCartItem($event)"
-                            *ngFor="let cartItem of cartItems" [cartItem]="cartItem"></app-shopping-cart-item>
+                            *ngFor="let cartItem of cartItems" [cartItem]="cartItem">
+    </app-shopping-cart-item>
   </div>
   <app-shopping-cart-summary (onCheckout)="checkout()"></app-shopping-cart-summary>
 </div>

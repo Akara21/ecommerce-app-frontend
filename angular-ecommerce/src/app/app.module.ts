@@ -26,7 +26,8 @@ import {AuthInterceptor} from "./shared/interceptors/AuthInterceptor";
 import {OrderComponent} from './components/order/order.component';
 import {DatePipe} from "@angular/common";
 import {ConfirmationDialogComponent} from './components/confirmation-dialog/confirmation-dialog.component';
-import { OrderItemComponent } from './components/order/order-item/order-item.component';
+import {OrderHistoryComponent} from './components/order/order-history/order-history.component';
+import {OrderListComponent} from './components/order/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OrderItemComponent } from './components/order/order-item/order-item.com
     ShoppingCartItemComponent,
     OrderComponent,
     ConfirmationDialogComponent,
-    OrderItemComponent,
+    OrderHistoryComponent,
+    OrderListComponent,
   ],
   imports: [
     BrowserModule,

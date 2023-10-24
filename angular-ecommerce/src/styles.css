@@ -18,7 +18,7 @@ GREY COLOR: #343a40
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
   color: #343a40;
   position: relative;
 }

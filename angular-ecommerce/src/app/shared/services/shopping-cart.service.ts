@@ -72,12 +72,7 @@ export class ShoppingCartService {
       }
     );
   }
-
-  clearCart() {
-    this._cartItems = [];
-    this.cartItemsSubject.next(this._cartItems);
-  }
-
+  
   loadCart() {
     this.http.get<CartItem[]>(this.baseUrl).subscribe((cartItems) => {
       this._cartItems = cartItems;
@@ -88,4 +83,13 @@ export class ShoppingCartService {
     })
   }
 
+  clearCart() {
+    this.http.delete(this.baseUrl).subscribe(response => {
+      console.log("Successfully Cleared Cart!")
+      this._cartItems = [];
+      this.cartItemsSubject.next(this._cartItems);
+    }, error => {
+      console.log()
+    })
+  }
 }

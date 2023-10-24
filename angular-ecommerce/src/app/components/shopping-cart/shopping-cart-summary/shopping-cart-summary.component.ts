@@ -33,7 +33,8 @@ export class ShoppingCartSummaryComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '400px',
       data: {
-        confirmationText: 'Do you want to place this order?'
+        confirmationText: 'Do you want to place this order?',
+        price: this.total
       },
     });
 
