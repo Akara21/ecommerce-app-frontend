@@ -64,7 +64,7 @@ export class ShoppingCartService {
     this.http.post(this.baseUrl + "/delete", cartItem).subscribe(
       (response) => {
         this._cartItems = this._cartItems.filter((cartItemTemp) => cartItemTemp.product.id !== cartItem.product.id);
-        this.snackBarService.openSnackBar('Product Successfully deleted!');
+        this.snackBarService.openSnackBar(cartItem.product.name + ' successfully deleted!');
         this.updateCart();
       },
       (error) => {
@@ -72,7 +72,7 @@ export class ShoppingCartService {
       }
     );
   }
-  
+
   loadCart() {
     this.http.get<CartItem[]>(this.baseUrl).subscribe((cartItems) => {
       this._cartItems = cartItems;

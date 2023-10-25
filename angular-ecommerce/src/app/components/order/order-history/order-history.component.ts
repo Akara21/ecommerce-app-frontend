@@ -17,7 +17,7 @@ export class OrderHistoryComponent implements OnInit {
 
 
   ngOnInit() {
-    this.onSelectOrder.emit(this.orders[0])
+    this.loadOrdersAsync()
   }
 
   setActiveOrderId(order: Order) {
@@ -27,6 +27,15 @@ export class OrderHistoryComponent implements OnInit {
 
   selectOrder(order: Order) {
     this.onSelectOrder.emit(order);
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
+  loadOrdersAsync() {
+    const interValId = setInterval(() => {
+      if (this.orders.length > 0) {
+        this.setActiveOrderId(this.orders[0]);
+        clearInterval(interValId)
+      }
+    }, 1); // Beispielhafte Verzögerung
+  }
 }

@@ -41,10 +41,8 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   checkout() {
-    console.log("ITEMS TO CHECKOUT ", this.cartItems)
     this.shoppingCartService.clearCart();
     this.orderService.addOrders(this.cartItems).subscribe(response => {
-      console.log("SUCCESS")
       this.router.navigate(['orders'])
     }, error => {
       console.log("ERROR: ", error)

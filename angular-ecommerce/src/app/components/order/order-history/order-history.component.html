@@ -2,7 +2,7 @@
   <p class="order-history">Orders History</p>
   <div
     (click)="setActiveOrderId(order)"
-    *ngFor="let order of orders"
+    *ngFor="let order of orders;  let i = index"
     [class.active]="activeOrderId === order.id"
     class="order-summary-item"
   >

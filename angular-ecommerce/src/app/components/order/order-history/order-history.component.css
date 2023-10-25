@@ -14,8 +14,8 @@
   align-items: center;
   justify-content: space-between;
   font-size: 18px;
-  padding: 20px 24px;
-  transition: all 0.3s;
+  padding: 28px;
+  transition: all 0.2s;
   cursor: pointer;
 }
 
@@ -76,6 +76,7 @@
 
 .order-summary-item.active {
   background-color: #f4f4f4;
+  border-left: 6px solid #087f5b;
 }
 
 .order-summary-item.active .order-summary-name {

@@ -26,7 +26,7 @@ export class OrderComponent implements OnInit {
         let transformedDate = this.datePipe.transform(order.orderDate, "MMM dd, yyy");
         order.orderDate = transformedDate!;
       }
-      this.orders = orders;
+      this.orders = orders.reverse();
     })
   }
 
