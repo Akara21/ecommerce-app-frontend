@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
       this.bestSeller = products.slice(0, 3);
       console.log(this.bestSeller)
     })
+    this.shoppingCartService.loadCart();
   }
 
   addProductToShoppingCart(product: Product) {

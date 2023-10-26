@@ -3,14 +3,14 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Product} from "../models/Product";
 import {AuthService} from "./auth.service";
+import {environment} from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-
-  private baseUrl: string = "http://localhost:7070/api/products"
+  private baseUrl: string = environment.apiUrl + "/products"
 
   constructor(private http: HttpClient, private authService: AuthService) {
   }
@@ -20,7 +20,7 @@ export class ProductService {
   }
 
   getProductsByCategoryId(id: number): Observable<Product[]> {
-    let url = `http://localhost:7070/api/categories/${id}/products`;
+    let url = `${environment.apiUrl}/categories/${id}/products`;
     return this.http.get<Product[]>(url);
   }
 

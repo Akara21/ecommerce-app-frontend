@@ -5,6 +5,7 @@ import {UserLogin} from "../models/UserLogin";
 import {SnackBarService} from "./snack-bar.service";
 import {UserRegister} from "../models/UserRegister";
 import {ShoppingCartService} from "./shopping-cart.service";
+import {environment} from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import {ShoppingCartService} from "./shopping-cart.service";
 export class AuthService {
 
   private isAuthenticated = false;
-  private baseUrl: string = "http://localhost:7070/api/auth"
+  private baseUrl: string = environment.apiUrl + "/auth"
 
   private user: string | null = null;
   private token: string | null = null;

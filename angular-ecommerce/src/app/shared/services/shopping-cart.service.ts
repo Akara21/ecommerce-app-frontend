@@ -4,13 +4,14 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {SnackBarService} from "./snack-bar.service";
 import {HttpClient} from "@angular/common/http";
 import {Product} from "../models/Product";
+import {environment} from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
 
-  private baseUrl: string = "http://localhost:7070/api/cart"
+  private baseUrl: string = environment.apiUrl + "/cart"
   private total: number = 0;
   private _cartItems: CartItem[] = [];
   private cartItemsSubject = new BehaviorSubject<CartItem[]>(this._cartItems);
