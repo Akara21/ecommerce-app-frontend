@@ -4,6 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.3s;
+  
 }
 
 .login-box {
@@ -15,7 +16,7 @@
 }
 
 .login-text-box {
-  padding: 6.8rem 10rem;
+  padding: 6.8rem 8.6rem;
   color: #087f5b;
   text-transform: uppercase;
   letter-spacing: 3px;

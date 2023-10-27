@@ -6,6 +6,7 @@ mat-dialog-actions {
 
 mat-dialog-content {
   font-family: inherit !important;
+  font-size: 1.6rem !important;
 }
 
 .btn--dialog {

@@ -10,3 +10,8 @@
   margin-bottom: 3rem;
 }
 
+.app-footer {
+  position: fixed;
+  z-index: -10000;
+}
+
