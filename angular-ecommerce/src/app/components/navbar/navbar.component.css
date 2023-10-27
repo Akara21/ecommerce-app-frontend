@@ -11,14 +11,14 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.98);
-  height: 76px;
-  padding: 0 64px;
+  height: 7.6rem;
+  padding: 0 6.4rem;
   z-index: 999;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0.4rem 1.2rem;
 }
 
 .logo {
-  height: 52px;
+  height: 5.2rem;
 }
 
 /**************************/
@@ -30,7 +30,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  gap: 32px;
+  gap: 3.2rem;
 }
 
 .main-nav-link:link,
@@ -39,7 +39,7 @@
   position: relative;
   color: #333;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 2rem;
   transition: all 0.3s;
 }
 
@@ -52,7 +52,7 @@
   content: "";
   position: absolute;
   width: 0;
-  height: 3px;
+  height: 0.3rem;
   bottom: -8px;
   left: 0;
   background-color: #087f5b;
@@ -65,15 +65,15 @@
 
 .main-nav-link.nav-cart:link,
 .main-nav-link.nav-cart:visited {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   border-color: transparent;
-  border-radius: 12px;
+  border-radius: 1.2rem;
   color: #fff;
   background-color: #087f5b;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .main-nav-link.nav-cart:hover,
@@ -89,11 +89,11 @@
   border-radius: 50%;
   background-color: white;
   color: #087f5b;
-  line-height: 30px;
+  line-height: 30rem;
   text-align: center;
-  width: 30px;
-  font-size: 18px;
-  height: 30px;
+  width: 3rem;
+  font-size: 1.8rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,20 +101,20 @@
 
 .icon-logout {
   color: #087f5b;
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   display: inline-block;
 }
 
 .btn--logout {
   display: flex;
   align-items: center;
-  padding: 10px 12px;
+  padding: 1rem 1.2rem;
   border-color: transparent;
-  border-radius: 12px;
+  border-radius: 1.2rem;
   color: #333;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 2rem;
   transition: background-color 0.3s, transform 0.1s; /* Add a transition for background color and transform */
   cursor: pointer;
   background-color: #ebebeb;
@@ -133,9 +133,9 @@
   color: #087f5b !important;
 }
 
-.text-dropown {
+.text-dropdown {
   font-family: inherit !important;
   color: #343a40 !important;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 

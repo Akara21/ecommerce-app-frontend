@@ -1,12 +1,12 @@
 .search-container {
-  border-radius: 12px;
-  padding: 8px 16px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 0.2rem 0.8rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 260px;
-  margin-bottom: 32px;
+  width: 26rem;
+  margin-bottom: 3.2rem;
 }
 
 .search-icon {
@@ -15,9 +15,9 @@
 
 .search-bar {
   border: none;
-  padding: 10px;
-  width: 180px;
-  font-size: 16px;
+  padding: 1rem;
+  width: 18rem;
+  font-size: 1.6rem;
   caret-color: #aaa;
   font-family: inherit;
 }

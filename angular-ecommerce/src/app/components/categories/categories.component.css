@@ -2,9 +2,9 @@
 .category-section {
   display: flex;
   flex-direction: column;
-  border-radius: 12px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  width: 260px;
+  border-radius: 1.2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 0.2rem 0.8rem 0;
+  width: 26rem;
   overflow: hidden;
 }
 
@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 18px;
-  padding: 16px 24px;
+  font-size: 1.8rem;
+  padding: 1.6rem 2.4rem;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -21,9 +21,9 @@
 .category-amount {
   color: #fff;
   background-color: #087f5b;
-  border-radius: 8px;
-  padding: 8px;
-  width: 36px;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  width: 3.6rem;
   display: flex;
   justify-content: center;
   align-items: center;

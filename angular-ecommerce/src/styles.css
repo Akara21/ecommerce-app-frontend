@@ -17,10 +17,15 @@ GREY COLOR: #343a40
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Inter", sans-serif !important;
   color: #343a40;
   position: relative;
+  font-size: 1.6rem;
 }
 
 .container {
@@ -48,7 +53,6 @@ body {
   column-gap: 60px;
   row-gap: 50px;
 }
-
 
 .btn {
   background-color: #087f5b;
