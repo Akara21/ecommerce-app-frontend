@@ -1,11 +1,11 @@
 .order-summary-container {
-  border-radius: 12px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  border-radius: 1.2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 0.2rem 0.8rem 0;
 }
 
 .order-history {
-  padding: 16px 24px;
-  font-size: 20px;
+  padding: 1.6rem 2.4rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 18px;
-  padding: 28px;
+  font-size: 1.8rem;
+  padding: 2.8rem;
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -22,38 +22,38 @@
 .order-info-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 .order-summary-name {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 500;
   transition: all 0.2s;
 }
 
 .order-total-amount {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .order-summary-amount {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #727272;
   display: flex;
-  gap: 4px;
+  gap: 0.4rem;
 }
 
 .order-delivery-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.8rem;
   align-items: flex-end;
 }
 
 .delivered-flex-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 .delivery-icon {
@@ -62,12 +62,12 @@
 
 .delivered-flex-container span {
   color: #087f5b;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .delivery-date {
   color: #727272;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .order-summary-item:hover {
@@ -76,7 +76,7 @@
 
 .order-summary-item.active {
   background-color: #f4f4f4;
-  border-left: 6px solid #087f5b;
+  border-left: 0.6rem solid #087f5b;
 }
 
 .order-summary-item.active .order-summary-name {

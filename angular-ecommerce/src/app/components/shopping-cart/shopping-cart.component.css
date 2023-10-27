@@ -1,15 +1,15 @@
 .shopping-cart-container {
-  width: 1300px;
+  width: 130rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 70fr 30fr;
-  gap: 48px;
+  gap: 4.8rem;
 }
 
 .shopping-cart-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  font-size: 18px;
+  gap: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 500;
 }

@@ -1,7 +1,7 @@
 mat-dialog-actions {
-  padding: 20px !important;
+  padding: 2rem !important;
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
 }
 
 mat-dialog-content {
@@ -10,10 +10,10 @@ mat-dialog-content {
 
 .btn--dialog {
   transition: background-color 0.3s, scale 0.1s;
-  padding: 12px;
+  padding: 1.2rem;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
@@ -40,7 +40,7 @@ mat-dialog-content {
 }
 
 .btn--cancel:hover {
-  background-color: #e0e0e0;
+  background-color: #e5e5e5;
 }
 
 

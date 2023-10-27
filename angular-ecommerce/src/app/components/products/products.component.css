@@ -1,8 +1,8 @@
 .products-grid-container {
-  width: 1300px;
+  width: 130rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 1000px;
+  grid-template-columns: 30rem 100rem;
 }
 
 .fixed-container {

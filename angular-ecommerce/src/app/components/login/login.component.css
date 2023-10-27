@@ -9,22 +9,22 @@
 .login-box {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   overflow: hidden;
 }
 
 .login-text-box {
-  padding: 68px 100px;
+  padding: 6.8rem 10rem;
   color: #087f5b;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
 .login-header {
-  font-size: 32px;
+  font-size: 3.2rem;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 4.8rem;
 }
 
 .login-img-box {
@@ -41,25 +41,25 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 3.2rem;
 }
 
 .login-form label {
   display: block;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 }
 
 .login-form input {
   width: 100%;
-  padding: 12px;
-  font-size: 18px;
+  padding: 1.2rem;
+  font-size: 1.8rem;
   font-family: inherit;
   color: inherit;
   border: none;
   background-color: rgba(8, 127, 91, 0.05);
-  border-radius: 9px;
+  border-radius: 0.9rem;
 }
 
 .login-form input::placeholder {
@@ -68,20 +68,20 @@
 
 .login-box *:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(8, 127, 91, 0.8);
+  box-shadow: 0 0 0 0.3rem rgba(8, 127, 91, 0.8);
   transition: all 0.3s;
 }
 
 .btn-login {
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 .call-to-login {
-  font-size: 12px;
-  margin-top: 28px;
+  font-size: 1.2rem;
+  margin-top: 2.8rem;
   display: flex;
   font-weight: 500;
-  gap: 12px;
+  gap: 1.2rem;
   justify-content: center;
 }
 
