@@ -15,7 +15,7 @@
 }
 
 .signup-text-box {
-  padding: 3.6rem 8.6rem;
+  padding: 2.8rem 8.6rem;
   color: #087f5b;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
@@ -41,14 +41,14 @@
 .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.2rem;
 }
 
 .signup-form label {
   display: block;
   font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .signup-form input {
@@ -57,19 +57,53 @@
   font-size: 1.8rem;
   font-family: inherit;
   color: inherit;
-  border: none;
   background-color: rgba(8, 127, 91, 0.05);
   border-radius: 0.9rem;
+  border: 2px solid transparent;
 }
 
 .signup-form input::placeholder {
   color: #aaa;
 }
 
+.input-error {
+  transition: all 0.3s;
+  color: #ff4848;
+}
+
+.input-error input {
+  border: 2px solid #ff4848;
+}
+
+.input-error input::placeholder {
+  color: #ff4848;
+}
+
+.error-message {
+  font-size: 1.2rem !important;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: 1.2px;
+  padding-left: 0.4rem;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.input-error .error-message {
+  opacity: 1;
+}
+
+
 .signup-box *:focus {
   outline: none;
-  box-shadow: 0 0 0 0.3rem rgba(8, 127, 91, 0.8);
+  box-shadow: 0 0 0 0.2rem rgba(8, 127, 91, 0.8);
   transition: all 0.3s;
+}
+
+.input-error *:focus {
+  box-shadow: none;
 }
 
 .call-to-signup {
@@ -89,3 +123,4 @@
   font-weight: 600;
   cursor: pointer;
 }
+

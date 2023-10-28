@@ -40,7 +40,7 @@ export class AuthService {
 
     const {email, password} = userLogin;
 
-    return this.http.post(this.baseUrl + "/login", userLogin, {
+    this.http.post(this.baseUrl + "/login", userLogin, {
       headers,
       responseType: 'text'
     }).subscribe(
@@ -65,13 +65,7 @@ export class AuthService {
 
     return this.http.post(this.baseUrl + "/register", userRegister, {
       headers,
-    }).subscribe(
-      (response) => {
-        this.snackBarService.openSnackBar("Successfully registered!");
-      },
-      (error) => {
-        console.log(error);
-      })
+    })
 
   }
 

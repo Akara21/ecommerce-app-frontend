@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.3s;
-  
+
 }
 
 .login-box {
@@ -69,7 +69,7 @@
 
 .login-box *:focus {
   outline: none;
-  box-shadow: 0 0 0 0.3rem rgba(8, 127, 91, 0.8);
+  box-shadow: 0 0 0 0.2rem rgba(8, 127, 91, 0.8);
   transition: all 0.3s;
 }
 

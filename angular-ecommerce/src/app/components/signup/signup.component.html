@@ -4,24 +4,36 @@
       <div class="signup-text-box">
         <h2 class="signup-header">Welcome</h2>
         <form (ngSubmit)="register()" class="signup-form">
-          <div class="signup-input-container">
+          <div [ngClass]="{'input-error': !firstNameIsValid && formSubmitted}">
             <label for="firstName">Firstname</label>
-            <input [(ngModel)]="userRegister.firstName" id="firstName" name="firstName" placeholder="Max" type="text">
+            <input (keyup)="firstNameValidator()" [(ngModel)]="userRegister.firstName" id="firstName" name="firstName"
+                   placeholder="Max"
+                   type="text">
+            <span class="error-message">Firstname must not be empty!</span>
           </div>
-          <div class="signup-input-container">
+          <div [ngClass]="{'input-error': !lastNameIsValid && formSubmitted}">
             <label for="lastName">Lastname</label>
-            <input [(ngModel)]="userRegister.lastName" id="lastName" name="lastName"
+            <input (keyup)="lastNameValidator()" [(ngModel)]="userRegister.lastName" id="lastName" name="lastName"
                    placeholder="Mustermann" type="text">
+            <span class="error-message">Lastname must not be empty!</span>
+
           </div>
-          <div class="signup-input-container">
+          <div [ngClass]="{'input-error': !emailIsValid && formSubmitted}">
             <label for="email">E-Mail</label>
-            <input [(ngModel)]="userRegister.email" id="email" name="email" placeholder="max.mustermann@example.com"
+            <input (keyup)="emailValidator()" [(ngModel)]="userRegister.email" id="email" name="email"
+                   placeholder="max.mustermann@example.com"
                    type="email">
+            <span class="error-message">{{emailErrorMessage}}</span>
+
           </div>
-          <div class="signup-input-container">
+          <div [ngClass]="{'input-error': !passwordIsValid && formSubmitted}">
             <label for="password">Password</label>
-            <input [(ngModel)]="userRegister.password" id="password" name="password" placeholder="Enter your password"
+            <input (keyup)="passwordValidator()" [(ngModel)]="userRegister.password" id="password" name="password"
+                   placeholder="Enter your password"
                    type="password">
+            <span
+              class="error-message">Password must be at least 6 digits</span>
+
           </div>
           <button class="btn btn--big btn-signup" type="submit">Sign Up</button>
         </form>
