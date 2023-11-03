@@ -7,6 +7,9 @@ import {AuthService} from "../../shared/services/auth.service";
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+
+  currentYear = new Date().getFullYear();
+
   constructor(private authService: AuthService) {
   }
 
