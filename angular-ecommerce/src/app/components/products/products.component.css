@@ -1,11 +1,17 @@
 .products-grid-container {
-  width: 130rem;
+  width: 124rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 30rem 100rem;
+  grid-template-columns: 32rem 92rem;
 }
 
 .fixed-container {
   position: fixed;
+}
+
+.product-card-grid {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  row-gap: 3rem;
 }
 
