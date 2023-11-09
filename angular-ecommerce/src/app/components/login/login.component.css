@@ -42,7 +42,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 2.2rem;
 }
 
 .login-form label {
@@ -58,7 +58,7 @@
   font-size: 1.8rem;
   font-family: inherit;
   color: inherit;
-  border: none;
+  border: 0.2rem solid transparent;
   background-color: rgba(8, 127, 91, 0.05);
   border-radius: 0.9rem;
 }
@@ -69,8 +69,12 @@
 
 .login-box *:focus {
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(8, 127, 91, 0.8);
+  box-shadow: 0 0 0 0.15rem rgba(8, 127, 91, 0.8);
   transition: all 0.3s;
+}
+
+.input-error *:focus {
+  box-shadow: none;
 }
 
 .btn-login {
@@ -94,3 +98,42 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.input-error {
+  transition: all 0.3s;
+  color: #ff4848;
+}
+
+.input-error input {
+  border-color: #ff4848;
+}
+
+.input-error input::placeholder {
+  color: #ff4848;
+}
+
+.error-message {
+  font-size: 1.2rem !important;
+  font-weight: 400;
+  display: block;
+  text-transform: none;
+  letter-spacing: 1.2px;
+  padding-left: 0.4rem;
+  margin-top: 0.4rem;
+  opacity: 0;
+  transition: all 0.3s;
+  color: #ff4848;
+}
+
+.input-error .error-message, .invalid-input.error-message {
+  opacity: 1;
+}
+
+.invalid-input {
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+
+
+
