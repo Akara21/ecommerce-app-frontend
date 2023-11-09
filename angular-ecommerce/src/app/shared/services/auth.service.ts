@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {UserLogin} from "../models/UserLogin";
 import {SnackBarService} from "./snack-bar.service";
 import {UserRegister} from "../models/UserRegister";
 import {ShoppingCartService} from "./shopping-cart.service";
 import {environment} from "../../../environments/environment.prod";
+import {UserLogin} from "../models/UserLogin";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -33,30 +34,26 @@ export class AuthService {
     }
   }
 
-  login(userLogin: UserLogin) {
+  login(userLogin: UserLogin): Observable<string> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
-    const {email, password} = userLogin;
-
-    this.http.post(this.baseUrl + "/login", userLogin, {
+    return this.http.post(this.baseUrl + "/login", userLogin, {
       headers,
       responseType: 'text'
-    }).subscribe(
-      (response: string) => {
-        this.user = email!;
-        this.token = response;
-        this.isAuthenticated = true;
-        localStorage.setItem('user', JSON.stringify(email!));
-        localStorage.setItem('token', JSON.stringify(response));
-        this.shoppingCartService.loadCart();
-        this.router.navigate([this.returnUrl])
-      },
-      (error) => {
-        console.log("Invalid Credentials");
-      })
+    });
   }
+
+  handleLogin(user: UserLogin, token: string) {
+    this.user = user.email!;
+    this.token = token;
+    this.isAuthenticated = true;
+    localStorage.setItem('user', JSON.stringify(this.user));
+    localStorage.setItem('token', JSON.stringify(token));
+    this.shoppingCartService.loadCart();
+  }
+
 
   register(userRegister: UserRegister) {
     const headers = new HttpHeaders({
@@ -76,7 +73,6 @@ export class AuthService {
     this.token = null;
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    this.shoppingCartService.clearCart();
     this.router.navigate(['/login']);
   }
 
