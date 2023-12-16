@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ProductCategory} from "../../shared/models/ProductCategory";
-import {ProductCategoryService} from "../../shared/services/product-category.service";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ProductCategory } from '../../shared/models/ProductCategory';
+import { ProductCategoryService } from '../../shared/services/product-category.service';
 
 @Component({
   selector: 'app-categories',
@@ -15,26 +15,27 @@ export class CategoriesComponent implements OnInit {
   @Output()
   onSelectCategory = new EventEmitter<number>();
 
-  constructor(private productCategoryService: ProductCategoryService) {
-  }
+  constructor(private productCategoryService: ProductCategoryService) {}
 
   ngOnInit() {
     this.getAllCategories();
-  }
-
-  setActiveCategory(category: ProductCategory) {
-    this.activeCategory = category.categoryName!;
-    this.onSelectCategory.emit(category.id);
   }
 
   getAllCategories() {
     this.productCategoryService.getCategoryList().subscribe((categories) => {
       this.categories = categories;
       this.getTotalAmountOfProducts();
-    })
+    });
   }
 
   getTotalAmountOfProducts() {
-    this.categories.forEach(category => this.totalAmountOfProduct += category.amountOfProducts!);
+    this.categories.forEach(
+      (category) => (this.totalAmountOfProduct += category.amountOfProducts!)
+    );
+  }
+
+  setActiveCategory(category: ProductCategory) {
+    this.activeCategory = category.categoryName!;
+    this.onSelectCategory.emit(category.id);
   }
 }
