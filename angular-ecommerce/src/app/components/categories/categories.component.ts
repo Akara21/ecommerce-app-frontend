@@ -8,7 +8,7 @@ import {ProductCategoryService} from "../../shared/services/product-category.ser
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
-  activeCategory: string = 'Alle';
+  activeCategory: string = 'All';
   categories: ProductCategory[] = [];
   totalAmountOfProduct: number = 0;
 
