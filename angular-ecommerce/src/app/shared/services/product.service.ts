@@ -5,6 +5,10 @@ import {Product} from "../models/Product";
 import {AuthService} from "./auth.service";
 import {environment} from "../../../environments/environment.prod";
 
+/**
+ * This defines the service class calling the product-API-endpoint.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

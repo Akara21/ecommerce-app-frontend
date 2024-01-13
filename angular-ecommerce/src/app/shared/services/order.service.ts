@@ -5,6 +5,10 @@ import {Observable} from "rxjs";
 import {CartItem} from "../models/CartItem";
 import {environment} from "../../../environments/environment.prod";
 
+/**
+ * This defines the service class calling the order-API-endpoint.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

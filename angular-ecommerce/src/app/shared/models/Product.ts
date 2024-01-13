@@ -1,3 +1,6 @@
+/**
+ * This defines the interface representing a product.
+ */
 export interface Product {
   id?: number;
   name?: string;

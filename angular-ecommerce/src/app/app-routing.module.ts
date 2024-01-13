@@ -9,6 +9,10 @@ import {SignupComponent} from "./components/signup/signup.component";
 import {ShoppingCartComponent} from "./components/shopping-cart/shopping-cart.component";
 import {OrderComponent} from "./components/order/order.component";
 
+/**
+ * This manages all routes.
+ */
+
 const routes: Routes = [
   {
     path: '', canActivate: [AuthGuard], children: [

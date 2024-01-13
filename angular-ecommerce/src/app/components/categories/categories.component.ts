@@ -1,7 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ProductCategory } from '../../shared/models/ProductCategory';
-import { ProductCategoryService } from '../../shared/services/product-category.service';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ProductCategory} from '../../shared/models/ProductCategory';
+import {ProductCategoryService} from '../../shared/services/product-category.service';
 
+/**
+ * This defines the category component.
+ */
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -15,7 +18,8 @@ export class CategoriesComponent implements OnInit {
   @Output()
   onSelectCategory = new EventEmitter<number>();
 
-  constructor(private productCategoryService: ProductCategoryService) {}
+  constructor(private productCategoryService: ProductCategoryService) {
+  }
 
   ngOnInit() {
     this.getAllCategories();

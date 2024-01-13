@@ -8,6 +8,10 @@ import {environment} from "../../../environments/environment.prod";
 import {UserLogin} from "../models/UserLogin";
 import {Observable} from "rxjs";
 
+/**
+ * This defines the service class calling the auth-API-endpoint.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

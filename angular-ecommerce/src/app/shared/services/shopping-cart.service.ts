@@ -6,6 +6,10 @@ import {HttpClient} from "@angular/common/http";
 import {Product} from "../models/Product";
 import {environment} from "../../../environments/environment.prod";
 
+/**
+ * This defines the service class calling the cart-API-endpoint.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

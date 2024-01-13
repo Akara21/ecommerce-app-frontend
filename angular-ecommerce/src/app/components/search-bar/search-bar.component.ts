@@ -1,5 +1,8 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 
+/**
+ * This defines the searchbar component.
+ */
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -10,7 +13,7 @@ export class SearchBarComponent {
 
   @Output()
   onSearchInput = new EventEmitter<string>
-  
+
   clearInput() {
     this.searchTerm = '';
     this.onSearchInput.emit(this.searchTerm)

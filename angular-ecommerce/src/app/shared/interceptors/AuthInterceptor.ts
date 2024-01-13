@@ -2,6 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {AuthService} from "../services/auth.service";
 
+/**
+ * This defines the interceptor sending the user token for each request.
+ */
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {

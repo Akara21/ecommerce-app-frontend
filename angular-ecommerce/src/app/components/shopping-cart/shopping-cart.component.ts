@@ -4,6 +4,9 @@ import {CartItem} from "../../shared/models/CartItem";
 import {OrderService} from "../../shared/services/order.service";
 import {Router} from "@angular/router";
 
+/**
+ * This defines the shopping cart component.
+ */
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',

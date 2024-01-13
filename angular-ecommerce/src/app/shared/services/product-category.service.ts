@@ -4,6 +4,10 @@ import {Observable} from "rxjs";
 import {ProductCategory} from "../models/ProductCategory";
 import {environment} from "../../../environments/environment.prod";
 
+/**
+ * This defines the service class calling the category-API-endpoint.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

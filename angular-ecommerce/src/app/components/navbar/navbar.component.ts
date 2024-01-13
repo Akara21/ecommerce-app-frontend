@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../shared/services/auth.service";
 import {ShoppingCartService} from "../../shared/services/shopping-cart.service";
 
+/**
+ * This defines the navbar component.
+ */
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

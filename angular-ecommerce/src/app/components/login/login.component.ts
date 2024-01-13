@@ -3,6 +3,9 @@ import {AuthService} from "../../shared/services/auth.service";
 import {UserLogin} from "../../shared/models/UserLogin";
 import {Router} from "@angular/router";
 
+/**
+ * This defines the login component.
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

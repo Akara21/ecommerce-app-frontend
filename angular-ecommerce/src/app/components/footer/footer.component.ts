@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {AuthService} from "../../shared/services/auth.service";
 
+/**
+ * This defines the footer component.
+ */
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',

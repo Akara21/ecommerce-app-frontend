@@ -3,6 +3,9 @@ import {UserRegister} from "../../shared/models/UserRegister";
 import {AuthService} from "../../shared/services/auth.service";
 import {SnackBarService} from "../../shared/services/snack-bar.service";
 
+/**
+ * This defines the signup component.
+ */
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',

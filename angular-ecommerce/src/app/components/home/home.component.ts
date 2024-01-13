@@ -4,6 +4,9 @@ import {Product} from "../../shared/models/Product";
 import {SnackBarService} from "../../shared/services/snack-bar.service";
 import {ShoppingCartService} from "../../shared/services/shopping-cart.service";
 
+/**
+ * This defines the home component.
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

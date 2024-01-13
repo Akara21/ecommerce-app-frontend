@@ -3,6 +3,9 @@ import {Order} from "../../shared/models/Order";
 import {OrderService} from "../../shared/services/order.service";
 import {DatePipe} from "@angular/common";
 
+/**
+ * This defines the order component.
+ */
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',

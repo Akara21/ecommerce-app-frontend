@@ -4,6 +4,9 @@ import {ProductService} from "../../shared/services/product.service";
 import {ShoppingCartService} from "../../shared/services/shopping-cart.service";
 import {SnackBarService} from "../../shared/services/snack-bar.service";
 
+/**
+ * This defines the product component.
+ */
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
