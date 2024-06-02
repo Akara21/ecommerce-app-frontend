@@ -10,7 +10,6 @@ export class AuthGuard {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    console.log("IN CAN ACTIVATE AGAIn")
     if (this.authService.isLoggedIn()) {
       return true;
     } else {
